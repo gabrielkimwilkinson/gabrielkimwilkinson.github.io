@@ -22,7 +22,8 @@ div:hover{opacity:1;}
 </style>
 </head> 
 <body>
-<audio id="background" src="./bg.mp3" autoplay loop></audio>
+<audio id="background" src="./bg.mp3" autoplay preload="auto"></audio>
+<audio id="background0" src="./bg0.mp3" preload="auto"></audio>
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -119,7 +120,7 @@ div:hover{opacity:1;}
   </div>
 
    <!-- The Contact Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="Contact">
+  <div id="contact" class="w3-container w3-content w3-padding-64" style="max-width:800px" id="Contact">
     <h2 class="w3-wide">CONTACT</h2>
     <p class="w3-left">All show and merch inquiries via email.</p>
     <div class="w3-row w3-padding-64">
@@ -161,13 +162,22 @@ function myFunction() {
   }
 }
 
-// Play audio when mouse hovers over logo
+// Play background audio when mouse hovers over logo
 var audio = document.getElementById("background");
 var hoverElement = document.getElementById("logo"); //
 
 logo.addEventListener('mouseover', function() {
-  audio.currentTime = 0; // Optional: Resets the audio to the beginning each time
+  //audio.currentTime = 0; // Resets the audio
   audio.play(); 
+});
+
+// Play second background audio when mouse hovers over contact
+var audio0 = document.getElementById("background0");
+var hoverElement0 = document.getElementById("contact"); //
+
+logo.addEventListener('mouseover', function() {
+  audio0.currentTime = 0; // Resets the audio
+  audio0.play(); 
 });
 
 </script>
