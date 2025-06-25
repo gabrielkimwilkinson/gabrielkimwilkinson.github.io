@@ -22,7 +22,7 @@ div:hover{opacity:1;}
 </style>
 </head> 
 <body>
-<audio src="./bg.mp3" autoplay loop></audio>
+<audio id="background" src="./bg.mp3" autoplay loop></audio>
 
 <!-- Navbar -->
 <div class="w3-top">
@@ -34,7 +34,7 @@ div:hover{opacity:1;}
     <a href="#Merch" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MERCH</a>
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-large w3-button" title="Music">MUSIC <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <div class="w3-dropdown-content w3-black w3-bar-block w3-card-4">
         <a href="https://overhand.bandcamp.com/music" class="w3-bar-item w3-button">LISTEN</a>
         <a href="https://www.youtube.com/@overhandwi" class="w3-bar-item w3-button">VIDEOS</a>
         <a href="#" class="w3-bar-item w3-button">LYRICS</a>
@@ -58,7 +58,7 @@ div:hover{opacity:1;}
     
   <!-- The HOME Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="Home">
-    <img src="./Images/logowhite.png" style="width:100%">
+    <img id="logo" src="./Images/logowhite.png" style="width:100%">
      <p class="w3-center">Full-length album <i>Gouge</i> out July 17, 2025.</p>
      <a href="https://overhand.bandcamp.com/music">Listen here</a>
   </div>
@@ -109,11 +109,11 @@ div:hover{opacity:1;}
       </div>
       <div class="w3-center w3-third">
         <img src="./Images/shirtolivebg.png" style="width:50%">
-        <p>Logo Shirt - Olive ($10)</p>
+        <p>Logo Tee - Olive Drab ($10)</p>
       </div>
       <div class="w3-center w3-third">
         <img src="./Images/shirtblackbg.png" style="width:50%">
-        <p>Logo Shirt - Black ($10)</p>
+        <p>Logo Tee - Black ($10)</p>
       </div>
     </div>
   </div>
@@ -160,6 +160,15 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+// Play audio when mouse hovers over logo
+var audio = document.getElementById("background");
+var hoverElement = document.getElementById("logo"); //
+
+logo.addEventListener('mouseover', function() {
+  audio.currentTime = 0; // Optional: Resets the audio to the beginning each time
+  audio.play(); 
+});
 
 </script>
 
