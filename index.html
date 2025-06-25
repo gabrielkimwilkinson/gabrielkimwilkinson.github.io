@@ -22,7 +22,7 @@ div:hover{opacity:1;}
 </style>
 </head> 
 <body>
-<audio id="background" src="./bg.mp3" autoplay preload="auto"></audio>
+<audio id="background" src="./bg.mp3" preload="auto"></audio>
 <audio id="background0" src="./bg0.mp3" preload="auto"></audio>
 
 <!-- Navbar -->
@@ -125,7 +125,7 @@ div:hover{opacity:1;}
     <p class="w3-left">All show and merch inquiries via email.</p>
     <div class="w3-row w3-padding-64">
      <div class="w3-left w3-margin-bottom">
-        <div class="w3-container w3-black w3-border-bottom w3-border-right">
+        <div id="info" class="w3-container w3-black w3-border-bottom w3-border-right">
           <p>Email: overhandband@gmail.com</p>
           <p>Instagram: @overhandwi</p>
           <p>PO Box 0001, Milwaukee, WI 53211</p>
@@ -173,10 +173,10 @@ logo.addEventListener('mouseover', function() {
 
 // Play second background audio when mouse hovers over contact
 var audio0 = document.getElementById("background0");
-var hoverElement0 = document.getElementById("Contact"); //
+var hoverElement0 = document.getElementById("info"); //
 
-logo.addEventListener('mouseover', function() {
-  audio0.currentTime = 0; // Resets the audio
+info.addEventListener('mouseover', function() {
+  //audio0.currentTime = 0; // Resets the audio
   audio0.play(); 
 });
 
