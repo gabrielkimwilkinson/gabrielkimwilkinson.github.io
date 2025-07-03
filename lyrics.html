@@ -18,7 +18,7 @@ body{
 .mySlides {display: none}
 h2 {font-family: "Courier Prime", monospace}
 div{opacity:0.75; transition-property: opacity; transition-duration: 1s; transition-timing-function:east-out;}
-div:hover{opacity:0.90;}
+div:hover{opacity:1;}
 </style>
 </head> 
 <body>
@@ -28,6 +28,7 @@ div:hover{opacity:0.90;}
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="./index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a href="./index.html#Shows" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SHOWS</a>
     <a href="./index.html#Contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
@@ -45,6 +46,17 @@ div:hover{opacity:0.90;}
     </div>
   </div>
 </div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="./index.html#Shows" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SHOWS</a>
+  <a href="./index.html#Contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="./index.html#Merch"s class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+  <a href="https://overhand.bandcamp.com/music" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LISTEN</a>
+  <a href="https://www.youtube.com/@overhandwi" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">VIDEOS</a>
+  <a href="./lyrics.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LYRICS</a>  
+</div>
+
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px ">
@@ -161,6 +173,16 @@ div:hover{opacity:0.90;}
 </footer>
 
 <script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
 // Play Bleach background w/ mouse hover
 var audio = document.getElementById("bleach");
 var hoverElement = document.getElementById("Bleach"); //
